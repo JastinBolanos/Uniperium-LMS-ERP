@@ -1,0 +1,6 @@
+{
+  "name": "Uniperium LMS - Plataforma de Administración Académica",
+  "description": "Sistema integral de gestión académica para institutos y universidades con control multi-rol (Administrador, Profesor, Estudiante), libro de calificaciones interactivo tipo Excel, asignación de aulas virtuales y seguimiento de asistencia en tiempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
