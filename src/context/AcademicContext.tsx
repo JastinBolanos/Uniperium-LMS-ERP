@@ -130,8 +130,11 @@ export const AcademicProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return storageAdapter.get<Course[]>('courses', INITIAL_COURSES);
   });
 
+  // Ephemeral / in-memory enrollments (grades are editable in real-time, but fugitive/transient across page reloads)
   const [enrollments, setEnrollments] = useState<StudentEnrollment[]>(() => {
-    return storageAdapter.get<StudentEnrollment[]>('enrollments', INITIAL_ENROLLMENTS);
+    // Clear any previously persisted enrollments from storage to ensure fresh starting state
+    storageAdapter.remove('enrollments');
+    return JSON.parse(JSON.stringify(INITIAL_ENROLLMENTS));
   });
 
   const [classrooms, setClassrooms] = useState<ClassroomResource[]>(() => {
@@ -145,14 +148,10 @@ export const AcademicProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [announcements] = useState<Announcement[]>(INITIAL_ANNOUNCEMENTS);
   const [programs] = useState<AcademicProgram[]>(INITIAL_PROGRAMS);
 
-  // Sync to local storage
+  // Sync courses, classrooms, and attendance to local storage (enrollments/grades remain ephemeral in-memory)
   useEffect(() => {
     storageAdapter.set('courses', courses);
   }, [courses]);
-
-  useEffect(() => {
-    storageAdapter.set('enrollments', enrollments);
-  }, [enrollments]);
 
   useEffect(() => {
     storageAdapter.set('classrooms', classrooms);
