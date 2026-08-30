@@ -192,7 +192,7 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
               <div className="p-5 rounded-2xl bg-[#14120A] border border-[#C5A059]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] font-mono-code font-bold uppercase text-[#E6CA85] px-2 py-0.5 rounded bg-[#0A0A0A] border border-[#C5A059]/20">
-                    {language === 'es' ? 'Perfil: Dr. Marcos Valdivia S. • Algoritmos Avanzados' : 'Profile: Dr. Marcos Valdivia S. • Advanced Algorithms'}
+                    {language === 'es' ? 'Perfil Docente • Algoritmos Avanzados' : 'Faculty Profile • Advanced Algorithms'}
                   </span>
                   <h3 className="font-display font-bold text-lg text-white mt-1.5">
                     {t.caseTeacher}
@@ -243,8 +243,8 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
                       <tr className="hover:bg-[#141414]">
                         <td className="py-2.5 px-3 font-semibold text-white">
                           <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-[#C5A059]/20 text-[#E6CA85] font-bold text-[10px] flex items-center justify-center">SV</span>
-                            <span>Sofía Valenzuela Méndez</span>
+                            <span className="w-6 h-6 rounded-full bg-[#C5A059]/20 text-[#E6CA85] font-bold text-[10px] flex items-center justify-center">ES</span>
+                            <span>{language === 'es' ? 'Estudiante' : 'Student'}</span>
                           </div>
                         </td>
                         <td className="py-2.5 px-3 text-center">
@@ -334,7 +334,7 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
               <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] font-mono-code font-bold uppercase text-emerald-300 px-2 py-0.5 rounded bg-[#0A0A0A] border border-emerald-500/20">
-                    {language === 'es' ? 'Perfil: Sofía Valenzuela Méndez • Semestre 7° • PPA: 17.85' : 'Profile: Sofía Valenzuela Méndez • Term 7 • GPA: 17.85'}
+                    {language === 'es' ? 'Perfil Estudiante • Semestre 7° • PPA: 17.85' : 'Student Profile • Term 7 • GPA: 17.85'}
                   </span>
                   <h3 className="font-display font-bold text-lg text-white mt-1.5">
                     {t.caseStudent}
@@ -431,7 +431,7 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
               <div className="p-5 rounded-2xl bg-sky-950/20 border border-sky-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] font-mono-code font-bold uppercase text-sky-300 px-2 py-0.5 rounded bg-[#0A0A0A] border border-sky-500/20">
-                    {language === 'es' ? 'Perfil: Ing. Elena Rostova • Dirección Académica & Sistemas' : 'Profile: Eng. Elena Rostova • Academic Directorate & IT'}
+                    {language === 'es' ? 'Perfil Administración • Dirección Académica & Sistemas' : 'Administration Profile • Academic Directorate & IT'}
                   </span>
                   <h3 className="font-display font-bold text-lg text-white mt-1.5">
                     {t.caseAdmin}
@@ -521,7 +521,7 @@ export const LiveDemoModal: React.FC<LiveDemoModalProps> = ({
                     </div>
                     <p className="text-xs text-neutral-300 mt-1">
                       {hasConflict
-                        ? (language === 'es' ? 'La sala ya está ocupada por Algoritmos Avanzados (Dr. Valdivia).' : 'Room already booked by Advanced Algorithms (Dr. Valdivia).')
+                        ? (language === 'es' ? 'La sala ya está ocupada por Algoritmos Avanzados.' : 'Room already booked by Advanced Algorithms.')
                         : (language === 'es' ? 'Espacio libre para asignación sin colisiones institucionales.' : 'Slot ready for instant booking with zero collisions.')}
                     </p>
                   </div>

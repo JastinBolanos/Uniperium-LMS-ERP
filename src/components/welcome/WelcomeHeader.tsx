@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { LogIn, ArrowRight } from 'lucide-react';
 import { LanguageToggle } from '../../context/LanguageContext';
 
 interface WelcomeHeaderProps {
@@ -47,8 +47,9 @@ export const WelcomeHeader: React.FC<WelcomeHeaderProps> = ({ onEnter, t }) => {
           onClick={onEnter}
           className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#9A7B39] hover:from-[#E6CA85] hover:to-[#C5A059] text-black font-bold text-xs transition-all shadow-md shadow-[#C5A059]/20 hover:scale-105 active:scale-95 cursor-pointer"
         >
+          <LogIn className="w-3.5 h-3.5" />
           <span>{t.enterPlatform}</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
         </button>
       </div>
     </header>

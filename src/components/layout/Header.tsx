@@ -37,23 +37,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenWelcome }) => {
   const activeCourse = courses.find((c) => c.id === selectedCourseId) || courses[0];
   const locActiveCourse = getLocalizedCourse(activeCourse?.id || '', activeCourse, language);
 
-  const roleLabels: Record<Role, { title: string; color: string; badgeClass: string; icon: any }> = {
+  const roleLabels: Record<Role, { title: string; desc: string; color: string; badgeClass: string; icon: any }> = {
     TEACHER: {
       title: t.teacherFull,
-      color: 'text-indigo-600 dark:text-indigo-400',
-      badgeClass: 'bg-indigo-50 border-indigo-200 text-indigo-700',
+      desc: t.simTeacherDesc,
+      color: 'text-[#C5A059]',
+      badgeClass: 'bg-[#C5A059]/20 border-[#C5A059]/40 text-[#E6CA85]',
       icon: BarChart3,
     },
     STUDENT: {
-      title: t.studentFull,
-      color: 'text-emerald-600 dark:text-emerald-400',
-      badgeClass: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+      title: language === 'es' ? 'Alumno / Estudiante' : 'Student',
+      desc: t.simStudentDesc,
+      color: 'text-emerald-400',
+      badgeClass: 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300',
       icon: GraduationCap,
     },
     ADMIN: {
       title: t.adminFull,
-      color: 'text-sky-600 dark:text-sky-400',
-      badgeClass: 'bg-sky-50 border-sky-200 text-sky-700',
+      desc: t.simAdminDesc,
+      color: 'text-sky-400',
+      badgeClass: 'bg-sky-500/20 border-sky-500/40 text-sky-300',
       icon: Layers,
     },
   };
@@ -153,9 +156,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenWelcome }) => {
                 id="role-switcher-btn"
                 onClick={() => setIsRoleMenuOpen(!isRoleMenuOpen)}
                 className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full border border-[#262626] bg-[#0A0A0A] hover:bg-[#141414] hover:border-[#C5A059]/40 text-xs font-semibold text-neutral-200 shadow-sm transition-all cursor-pointer"
+                title={t.switchRole}
               >
                 <span className="w-2 h-2 rounded-full bg-[#C5A059] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono-code hidden sm:inline">{t.role}:</span>
+                <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-mono-code">{t.role}:</span>
                 <span className="text-white font-bold">{roleLabels[currentRole].title.split(' ')[0]}</span>
                 <ChevronDown className="w-3.5 h-3.5 text-neutral-500" />
               </button>
@@ -163,39 +167,56 @@ export const Header: React.FC<HeaderProps> = ({ onOpenWelcome }) => {
               {isRoleMenuOpen && (
                 <div
                   id="role-switcher-dropdown"
-                  className="absolute right-0 mt-2 w-64 bg-[#0A0A0A] rounded-2xl shadow-2xl border border-[#262626] p-2 z-50 animate-in fade-in duration-150"
+                  className="absolute right-0 mt-2 w-72 bg-[#0A0A0A] rounded-2xl shadow-2xl border border-[#262626] p-2.5 z-50 animate-in fade-in duration-150"
                 >
-                  <div className="px-3 py-1.5 text-[11px] font-mono-code font-bold uppercase text-[#C5A059]">
-                    {t.switchRole}
+                  <div className="px-3 pt-1.5 pb-2 border-b border-[#222] mb-1.5">
+                    <span className="text-[11px] font-mono-code font-bold uppercase text-[#C5A059] tracking-wider block">
+                      {t.switchRole}
+                    </span>
                   </div>
-                  {(['TEACHER', 'STUDENT', 'ADMIN'] as Role[]).map((roleKey) => {
-                    const RoleIcon = roleLabels[roleKey].icon;
-                    const isActive = currentRole === roleKey;
-                    return (
-                      <button
-                        key={roleKey}
-                        id={`switch-to-${roleKey.toLowerCase()}`}
-                        onClick={() => {
-                          switchRole(roleKey);
-                          setIsRoleMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left text-xs transition-colors cursor-pointer ${
-                          isActive ? 'bg-[#181818] font-bold text-[#E6CA85] border border-[#C5A059]/40' : 'hover:bg-[#121212] text-neutral-300'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2.5">
-                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-[#C5A059] text-black font-bold' : 'bg-neutral-900 text-neutral-400'}`}>
-                            <RoleIcon className="w-4 h-4" />
+
+                  <div className="space-y-1">
+                    {(['TEACHER', 'STUDENT', 'ADMIN'] as Role[]).map((roleKey) => {
+                      const RoleIcon = roleLabels[roleKey].icon;
+                      const isActive = currentRole === roleKey;
+                      return (
+                        <button
+                          key={roleKey}
+                          id={`switch-to-${roleKey.toLowerCase()}`}
+                          onClick={() => {
+                            switchRole(roleKey);
+                            setIsRoleMenuOpen(false);
+                          }}
+                          className={`w-full flex items-center justify-between p-2.5 rounded-xl text-left text-xs transition-all cursor-pointer ${
+                            isActive
+                              ? 'bg-[#181818] font-bold text-[#E6CA85] border border-[#C5A059]/50 shadow-md shadow-[#C5A059]/5'
+                              : 'hover:bg-[#121212] text-neutral-300 border border-transparent'
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                                isActive
+                                  ? 'bg-[#C5A059] text-black font-bold shadow-sm'
+                                  : 'bg-neutral-900 text-neutral-400 border border-neutral-800'
+                              }`}
+                            >
+                              <RoleIcon className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <p className={`font-semibold text-xs ${isActive ? 'text-[#E6CA85]' : 'text-white'}`}>
+                                {roleLabels[roleKey].title}
+                              </p>
+                              <p className="text-[10px] text-neutral-400 font-sans mt-0.5">
+                                {roleLabels[roleKey].desc}
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="font-semibold">{roleLabels[roleKey].title}</p>
-                            <p className="text-[10px] text-neutral-500 font-mono-code">{roleKey === 'TEACHER' ? 'Dr. Valdivia' : roleKey === 'STUDENT' ? 'Sofía V.' : 'Ing. Rostova'}</p>
-                          </div>
-                        </div>
-                        {isActive && <Check className="w-4 h-4 text-[#C5A059]" />}
-                      </button>
-                    );
-                  })}
+                          {isActive && <Check className="w-4 h-4 text-[#C5A059] shrink-0" />}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>

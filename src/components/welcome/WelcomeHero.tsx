@@ -4,6 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { Role } from '../../types/academic';
 import { LiveDemoModal } from './LiveDemoModal';
 import { RoleLoginModal } from './RoleLoginModal';
+import { QuickSignInModal } from './QuickSignInModal';
 import { WelcomeHeader } from './WelcomeHeader';
 import { WelcomeTitleSection } from './WelcomeTitleSection';
 import { RolePortalCards } from './RolePortalCards';
@@ -21,6 +22,7 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({ onEnter }) => {
 
   // Modals state
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isQuickSignInOpen, setIsQuickSignInOpen] = useState(false);
   const [loginModalRole, setLoginModalRole] = useState<Role | null>(null);
 
   const handleDirectEnter = (role: Role) => {
@@ -48,8 +50,8 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({ onEnter }) => {
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none opacity-40" />
 
-      {/* Top Header Branding */}
-      <WelcomeHeader onEnter={onEnter} t={t} />
+      {/* Top Header Branding with Iniciar Sesión button opening QuickSignInModal */}
+      <WelcomeHeader onEnter={() => setIsQuickSignInOpen(true)} t={t} />
 
       {/* Main Hero Showcase */}
       <main className="relative z-10 max-w-7xl mx-auto w-full px-6 py-8 sm:py-10 flex-1 flex flex-col justify-center">
@@ -80,6 +82,14 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({ onEnter }) => {
           t={t}
         />
       </main>
+
+      {/* Top Header Quick Sign-In Modal with 3 role choice buttons */}
+      <QuickSignInModal
+        isOpen={isQuickSignInOpen}
+        onClose={() => setIsQuickSignInOpen(false)}
+        onSelectRole={handleDirectEnter}
+        onOpenCredentialLogin={(role) => setLoginModalRole(role)}
+      />
 
       {/* Interactive Live Demo Modal */}
       <LiveDemoModal

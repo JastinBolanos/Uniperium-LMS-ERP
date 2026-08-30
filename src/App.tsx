@@ -127,7 +127,7 @@ const MainAppContent: React.FC = () => {
               <div className="p-4 rounded-2xl bg-[#121212] border border-[#262626]">
                 <h4 className="font-bold text-[#E6CA85] flex items-center gap-1.5 mb-1">
                   <BarChart3 className="w-4 h-4 text-[#C5A059]" />
-                  1. {t.teacherFull} (Dr. Marcos Valdivia):
+                  1. {t.teacherFull}:
                 </h4>
                 <p className="text-neutral-400 leading-relaxed">
                   {t.teacherRoleInfo}
@@ -137,7 +137,7 @@ const MainAppContent: React.FC = () => {
               <div className="p-4 rounded-2xl bg-[#121212] border border-[#262626]">
                 <h4 className="font-bold text-emerald-400 flex items-center gap-1.5 mb-1">
                   <GraduationCap className="w-4 h-4 text-emerald-400" />
-                  2. {t.studentFull} (Sofía Valenzuela):
+                  2. {t.studentFull}:
                 </h4>
                 <p className="text-neutral-400 leading-relaxed">
                   {t.studentRoleInfo}
@@ -147,7 +147,7 @@ const MainAppContent: React.FC = () => {
               <div className="p-4 rounded-2xl bg-[#121212] border border-[#262626]">
                 <h4 className="font-bold text-sky-400 flex items-center gap-1.5 mb-1">
                   <Layers className="w-4 h-4 text-sky-400" />
-                  3. {t.adminFull} (Ing. Elena Rostova):
+                  3. {t.adminFull}:
                 </h4>
                 <p className="text-neutral-400 leading-relaxed">
                   {t.adminRoleInfo}

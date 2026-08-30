@@ -47,10 +47,9 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
               {t.teacher}
             </h3>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <p className="text-xs font-mono-code text-[#C5A059] font-semibold">
-                {allDemoUsers.TEACHER.name}
-              </p>
-              <span className="text-[10px] font-mono-code text-neutral-500">• DOC-9042</span>
+              <span className="text-xs font-mono-code text-[#C5A059] font-semibold">
+                {t.teacherAuthMethod}
+              </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed mt-2">
               {t.teacherDesc}
@@ -78,7 +77,7 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
         <div className="space-y-2 pt-2 border-t border-[#1a1a1a]">
           <button
             id="enter-teacher-btn"
-            onClick={() => onDirectEnter('TEACHER')}
+            onClick={(e) => onOpenLoginModal('TEACHER', e)}
             className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#C5A059] to-[#9A7B39] hover:from-[#E6CA85] hover:to-[#C5A059] text-black font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-[#C5A059]/20 transition-all cursor-pointer group-hover:scale-[1.01]"
           >
             <LogIn className="w-4 h-4" />
@@ -119,10 +118,9 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
               {t.student}
             </h3>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <p className="text-xs font-mono-code text-emerald-400 font-semibold">
-                {allDemoUsers.STUDENT.name}
-              </p>
-              <span className="text-[10px] font-mono-code text-neutral-500">• 2026-I</span>
+              <span className="text-xs font-mono-code text-emerald-400 font-semibold">
+                {t.studentAuthMethod}
+              </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed mt-2">
               {t.studentDesc}
@@ -150,7 +148,7 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
         <div className="space-y-2 pt-2 border-t border-[#1a1a1a]">
           <button
             id="enter-student-btn"
-            onClick={() => onDirectEnter('STUDENT')}
+            onClick={(e) => onOpenLoginModal('STUDENT', e)}
             className="w-full py-3 px-4 rounded-xl bg-[#141414] hover:bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-2 border border-[#262626] transition-all cursor-pointer group-hover:shadow-lg group-hover:shadow-emerald-600/20 group-hover:scale-[1.01]"
           >
             <LogIn className="w-4 h-4" />
@@ -191,10 +189,9 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
               {t.admin}
             </h3>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <p className="text-xs font-mono-code text-sky-400 font-semibold">
-                {allDemoUsers.ADMIN.name}
-              </p>
-              <span className="text-[10px] font-mono-code text-neutral-500">• ROOT</span>
+              <span className="text-xs font-mono-code text-sky-400 font-semibold">
+                {t.adminAuthMethod}
+              </span>
             </div>
             <p className="text-xs text-neutral-400 leading-relaxed mt-2">
               {t.adminDesc}
@@ -222,7 +219,7 @@ export const RolePortalCards: React.FC<RolePortalCardsProps> = ({
         <div className="space-y-2 pt-2 border-t border-[#1a1a1a]">
           <button
             id="enter-admin-btn"
-            onClick={() => onDirectEnter('ADMIN')}
+            onClick={(e) => onOpenLoginModal('ADMIN', e)}
             className="w-full py-3 px-4 rounded-xl bg-[#141414] hover:bg-sky-600 text-white font-bold text-xs flex items-center justify-center gap-2 border border-[#262626] transition-all cursor-pointer group-hover:shadow-lg group-hover:shadow-sky-600/20 group-hover:scale-[1.01]"
           >
             <LogIn className="w-4 h-4" />

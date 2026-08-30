@@ -34,6 +34,11 @@ export interface Translations {
   atRisk: string;
   inProgressStatus: string;
   switchRole: string;
+  simulatorRolePrompt: string;
+  simTeacherDesc: string;
+  simStudentDesc: string;
+  simAdminDesc: string;
+  simulatorTag: string;
   activeRole: string;
   welcomeScreen: string;
   resetDemoData: string;
@@ -100,6 +105,17 @@ export interface Translations {
   hideCredentialsToggle: string;
   rememberCredentials: string;
   verifiedOfficialAccount: string;
+  notTeacherDemoBtn: string;
+  notStudentDemoBtn: string;
+  notAdminDemoBtn: string;
+  forgotPassword: string;
+  registerAccount: string;
+  authBlockedTitle: string;
+  authBlockedDesc: string;
+  forgotPasswordBlockedDesc: string;
+  registerBlockedDesc: string;
+  demoAccessNotice: string;
+  tryCredentialsBtn: string;
 
   // Live Demo 3-in-1 Showcase
   liveDemoSectionTitle: string;
@@ -375,6 +391,11 @@ export const translations: Record<Language, Translations> = {
     atRisk: 'En Riesgo',
     inProgressStatus: 'Cursando',
     switchRole: 'Cambiar Perfil de Usuario',
+    simulatorRolePrompt: 'Selecciona el rol institucional para acceder:',
+    simTeacherDesc: 'Docente',
+    simStudentDesc: 'Estudiante',
+    simAdminDesc: 'Administrador',
+    simulatorTag: 'Rol',
     activeRole: 'Rol Activo',
     welcomeScreen: 'Pantalla de Bienvenida',
     resetDemoData: 'Resetear Datos Demo',
@@ -392,7 +413,7 @@ export const translations: Record<Language, Translations> = {
     welcomeTitle1: 'Gestión Integral para Educación Superior',
     welcomeTitle2: 'Uniperium Academic Portal',
     welcomeSubtitle: 'Estructuración de jerarquías de datos, libro de calificaciones interactivo tipo hoja de cálculo en tiempo real, seguimiento matricial de asistencia y control centralizado de aulas virtuales.',
-    enterPlatform: 'Ir al Panel Principal',
+    enterPlatform: 'Iniciar Sesión',
     demoRoleSelection: 'SELECCIONA UN ROL PARA INGRESAR AL SISTEMA',
     teacherDesc: 'Acceso al Libro de Calificaciones tipo Excel con edición en celda, ponderaciones automáticas, matriz de asistencia y apertura de aulas virtuales.',
     studentDesc: 'Portal académico con visualización de calificaciones desglosadas, simulador de nota para aprobar, registro de asistencias y horario de clases virtuales.',
@@ -439,6 +460,17 @@ export const translations: Record<Language, Translations> = {
     hideCredentialsToggle: 'Ocultar Credenciales',
     rememberCredentials: 'Recordar credenciales en este equipo',
     verifiedOfficialAccount: 'Cuenta Oficial Verificada',
+    notTeacherDemoBtn: 'No eres docente puedes ingresar en modo demostracion',
+    notStudentDemoBtn: 'No eres estudiante puedes ingresar en modo demostracion',
+    notAdminDemoBtn: 'No eres administrador puedes ingresar en modo demostracion',
+    forgotPassword: '¿Olvidaste tu contraseña?',
+    registerAccount: 'Solicitar cuenta institucional / Registrarse',
+    authBlockedTitle: 'Acceso Institucional Restringido',
+    authBlockedDesc: 'El servidor de autenticación institucional LDAP / Directorio Activo se encuentra cerrado para accesos externos. No es posible iniciar sesión con credenciales arbitrarias ni registrar cuentas en este portal.',
+    forgotPasswordBlockedDesc: 'La recuperación remota de contraseña está bloqueada por normativas de seguridad institucional de Uniperium LMS. Contacte a la Dirección de TI.',
+    registerBlockedDesc: 'El auto-registro público está inhabilitado. Todas las cuentas institucionales son creadas exclusivamente por la administración de sistemas.',
+    demoAccessNotice: 'Para explorar y evaluar la plataforma con todas sus funciones habilitadas, pulsa el botón de demostración:',
+    tryCredentialsBtn: 'Validar e Iniciar Sesión',
 
     // Live Demo 3-in-1 Showcase
     liveDemoSectionTitle: '¿No eres cliente o estás evaluando la plataforma?',
@@ -703,6 +735,11 @@ export const translations: Record<Language, Translations> = {
     atRisk: 'At Risk',
     inProgressStatus: 'In Progress',
     switchRole: 'Switch User Profile',
+    simulatorRolePrompt: 'Select institutional role to access:',
+    simTeacherDesc: 'Faculty',
+    simStudentDesc: 'Student',
+    simAdminDesc: 'Administrator',
+    simulatorTag: 'Role',
     activeRole: 'Active Role',
     welcomeScreen: 'Welcome Screen',
     resetDemoData: 'Reset Demo Data',
@@ -720,7 +757,7 @@ export const translations: Record<Language, Translations> = {
     welcomeTitle1: 'Comprehensive Management for Higher Education',
     welcomeTitle2: 'Uniperium Academic Portal',
     welcomeSubtitle: 'Hierarchical academic structures, live spreadsheet-style gradebooks with dynamic formula recalculation, matrix attendance tracking, and centralized virtual room orchestration.',
-    enterPlatform: 'Enter Main Dashboard',
+    enterPlatform: 'Sign In',
     demoRoleSelection: 'SELECT A ROLE TO ENTER THE SYSTEM',
     teacherDesc: 'Excel-style Gradebook access with in-cell editing, automatic weighted averages, attendance matrices, and virtual classroom launcher.',
     studentDesc: 'Student portal with breakdown of graded evaluations, predictive final score simulator, attendance tracking, and weekly schedules.',
@@ -767,6 +804,17 @@ export const translations: Record<Language, Translations> = {
     hideCredentialsToggle: 'Hide Credentials',
     rememberCredentials: 'Remember credentials on this device',
     verifiedOfficialAccount: 'Verified Official Account',
+    notTeacherDemoBtn: 'Not faculty? You can enter in demo mode',
+    notStudentDemoBtn: 'Not a student? You can enter in demo mode',
+    notAdminDemoBtn: 'Not an administrator? You can enter in demo mode',
+    forgotPassword: 'Forgot your password?',
+    registerAccount: 'Request institutional account / Register',
+    authBlockedTitle: 'Institutional Access Restricted',
+    authBlockedDesc: 'The institutional LDAP / Active Directory authentication server is locked for external access. Direct credential login and new account registrations are blocked in this portal.',
+    forgotPasswordBlockedDesc: 'Remote password recovery is blocked under Uniperium LMS institutional security protocols. Please contact the Central IT Directorate.',
+    registerBlockedDesc: 'Public self-registration is disabled. All institutional accounts are provisioned exclusively by system administrators.',
+    demoAccessNotice: 'To explore and evaluate the platform with all full capabilities enabled, press the demo button:',
+    tryCredentialsBtn: 'Verify & Sign In',
 
     // Live Demo 3-in-1 Showcase
     liveDemoSectionTitle: 'Not a client or evaluating our platform?',

@@ -12,8 +12,8 @@ import {
 export const DEMO_USERS: Record<'ADMIN' | 'TEACHER' | 'STUDENT', UserProfile> = {
   ADMIN: {
     id: 'user-admin-01',
-    name: 'Ing. Elena Rostova',
-    email: 'elena.rostova@uniperium.edu.pe',
+    name: 'Administrador Institucional',
+    email: 'admin@uniperium.edu.pe',
     role: 'ADMIN',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     code: 'ADM-1002',
@@ -24,8 +24,8 @@ export const DEMO_USERS: Record<'ADMIN' | 'TEACHER' | 'STUDENT', UserProfile> = 
   },
   TEACHER: {
     id: 'user-teacher-01',
-    name: 'Dr. Marcos Valdivia S.',
-    email: 'm.valdivia@uniperium.edu.pe',
+    name: 'Docente Titular',
+    email: 'docente@uniperium.edu.pe',
     role: 'TEACHER',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     code: 'DOC-8420',
@@ -36,8 +36,8 @@ export const DEMO_USERS: Record<'ADMIN' | 'TEACHER' | 'STUDENT', UserProfile> = 
   },
   STUDENT: {
     id: 'user-student-01',
-    name: 'Sofía Valenzuela Méndez',
-    email: 'sofia.valenzuela@alumnos.uniperium.edu.pe',
+    name: 'Estudiante',
+    email: 'estudiante@uniperium.edu.pe',
     role: 'STUDENT',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
     code: 'EST-20231049',
@@ -164,8 +164,8 @@ export const INITIAL_COURSES: Course[] = [
     credits: 5,
     period: '2026-I',
     teacherId: 'user-teacher-01',
-    teacherName: 'Dr. Marcos Valdivia S.',
-    teacherEmail: 'm.valdivia@uniperium.edu.pe',
+    teacherName: 'Docente Titular',
+    teacherEmail: 'docente@uniperium.edu.pe',
     teacherAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     color: 'from-indigo-600 to-blue-700',
     iconName: 'Server',
@@ -211,8 +211,8 @@ export const INITIAL_COURSES: Course[] = [
     credits: 5,
     period: '2026-I',
     teacherId: 'user-teacher-01',
-    teacherName: 'Dr. Marcos Valdivia S.',
-    teacherEmail: 'm.valdivia@uniperium.edu.pe',
+    teacherName: 'Docente Titular',
+    teacherEmail: 'docente@uniperium.edu.pe',
     teacherAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     color: 'from-violet-600 to-purple-800',
     iconName: 'Cpu',
@@ -349,10 +349,10 @@ export const INITIAL_ATTENDANCE_SESSIONS: AttendanceSession[] = [
 export const INITIAL_ENROLLMENTS: StudentEnrollment[] = [
   {
     studentId: 'user-student-01',
-    studentName: 'Sofía Valenzuela Méndez',
+    studentName: 'Estudiante',
     studentCode: 'EST-20231049',
     studentAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
-    studentEmail: 'sofia.valenzuela@alumnos.uniperium.edu.pe',
+    studentEmail: 'estudiante@uniperium.edu.pe',
     courseId: 'course-01',
     grades: [
       { evaluationId: 'eval-101', score: 18.5, feedback: 'Excelente modelado de límites de contexto DDD y particionamiento.' },
@@ -571,7 +571,7 @@ export const INITIAL_CLASSROOMS: ClassroomResource[] = [
     specs: 'Licencia Zoom Large Meetings 500p, Grabación en la Nube 4K con IA Transcriptions',
     directUrl: 'https://zoom.us/j/98421094821',
     assignedSlots: [
-      { day: 'LUN', startTime: '08:00', endTime: '10:30', courseId: 'course-01', courseName: 'Arquitectura de Software Distribuido', teacherName: 'Dr. Marcos Valdivia S.' },
+      { day: 'LUN', startTime: '08:00', endTime: '10:30', courseId: 'course-01', courseName: 'Arquitectura de Software Distribuido', teacherName: 'Docente Titular' },
       { day: 'SAB', startTime: '09:00', endTime: '13:00', courseId: 'course-04', courseName: 'Infraestructura Cloud, Kubernetes y DevOps', teacherName: 'Ing. Carlos Mendoza R.' },
     ],
   },
@@ -585,7 +585,7 @@ export const INITIAL_CLASSROOMS: ClassroomResource[] = [
     specs: 'Google Workspace Education Plus, Breakout Rooms dinámicos, Reducción de ruido activa',
     directUrl: 'https://meet.google.com/ver-tice-ai',
     assignedSlots: [
-      { day: 'MAR', startTime: '14:00', endTime: '16:30', courseId: 'course-02', courseName: 'Inteligencia Artificial & Deep Learning', teacherName: 'Dr. Marcos Valdivia S.' },
+      { day: 'MAR', startTime: '14:00', endTime: '16:30', courseId: 'course-02', courseName: 'Inteligencia Artificial & Deep Learning', teacherName: 'Docente Titular' },
     ],
   },
   {
@@ -598,8 +598,8 @@ export const INITIAL_CLASSROOMS: ClassroomResource[] = [
     specs: 'Cluster 8x NVIDIA H100 SXM5 80GB, JupyterHub Enterprise, 2TB RAM ECC, Storage NVMe 50TB',
     directUrl: 'https://jupyter.uniperium.edu.pe/hub/lab-401',
     assignedSlots: [
-      { day: 'MIE', startTime: '10:45', endTime: '13:00', courseId: 'course-01', courseName: 'Arquitectura de Software Distribuido', teacherName: 'Dr. Marcos Valdivia S.' },
-      { day: 'JUE', startTime: '14:00', endTime: '16:30', courseId: 'course-02', courseName: 'Inteligencia Artificial & Deep Learning', teacherName: 'Dr. Marcos Valdivia S.' },
+      { day: 'MIE', startTime: '10:45', endTime: '13:00', courseId: 'course-01', courseName: 'Arquitectura de Software Distribuido', teacherName: 'Docente Titular' },
+      { day: 'JUE', startTime: '14:00', endTime: '16:30', courseId: 'course-02', courseName: 'Inteligencia Artificial & Deep Learning', teacherName: 'Docente Titular' },
     ],
   },
   {
