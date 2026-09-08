@@ -8,7 +8,18 @@
 > **Sistema Central de Gobernanza Académica.** 
 > Plataforma empresarial desplegada para la gestión integral de universidades e institutos de educación superior. Diseñada bajo una arquitectura modular estricta, unifica la gestión de calificaciones matriciales, analítica predictiva de rendimiento estudiantil y la orquestación inteligente de infraestructura física, virtual e híbrida.
 
-🌍 **[Ver Plataforma en Vivo (Producción) 🟢]** *(Enlace a Vercel/Netlify)*
+🌍 **[Ver Plataforma en Vivo (Producción) 🟢]** *https://uniperium.vercel.app/*
+
+![Vista Previa de Uniperium LMS](https://github.com/user-attachments/assets/fe495f15-8a38-43d0-aba5-9542e9f64715)
+
+---
+
+## 🎥 Demostración de la Plataforma Académica
+
+**🎬 Recorrido Operativo de Uniperium LMS**  
+Exploración de los portales de gestión educativa: desde el libro de calificaciones matricial y simulación predictiva de rendimiento, hasta la asignación de recursos y gobernanza de infraestructura académica.
+
+https://github.com/user-attachments/assets/3e75deb8-836c-43ce-a92e-47b8b1d08e60
 
 ---
 
