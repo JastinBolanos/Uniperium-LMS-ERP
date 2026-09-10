@@ -5,92 +5,93 @@
 ![Compliance](https://img.shields.io/badge/compliance-FERPA%20%7C%20GDPR-success)
 ![Security](https://img.shields.io/badge/security-TLS_1.3-orange)
 
-> **Sistema Central de Gobernanza Académica.** 
-> Plataforma empresarial desplegada para la gestión integral de universidades e institutos de educación superior. Diseñada bajo una arquitectura modular estricta, unifica la gestión de calificaciones matriciales, analítica predictiva de rendimiento estudiantil y la orquestación inteligente de infraestructura física, virtual e híbrida.
+> **Core Academic Governance System.** 
+> Enterprise platform deployed for the comprehensive management of universities and higher education institutions. Designed under a strict modular architecture, it unifies matrix gradebook management, predictive student performance analytics, and intelligent orchestration of physical, virtual, and hybrid infrastructure.
 
-🌍 **[Ver Plataforma en Vivo (Producción) 🟢]** *https://uniperium.vercel.app/*
+🌍 **[View Live Platform (Production) 🟢]** *https://uniperium.vercel.app/*
 
-![Vista Previa de Uniperium LMS](https://github.com/user-attachments/assets/fe495f15-8a38-43d0-aba5-9542e9f64715)
+![Uniperium LMS Preview](https://github.com/user-attachments/assets/fe495f15-8a38-43d0-aba5-9542e9f64715)
 
 ---
 
-## 🎥 Demostración de la Plataforma Académica
+## 🎥 Academic Platform Demonstration
 
-**🎬 Recorrido Operativo de Uniperium LMS**  
-Exploración de los portales de gestión educativa: desde el libro de calificaciones matricial y simulación predictiva de rendimiento, hasta la asignación de recursos y gobernanza de infraestructura académica.
+**🎬 Uniperium LMS Operational Walkthrough**  
+Exploration of educational management portals: from the matrix gradebook and predictive performance simulation to resource allocation and academic infrastructure governance.
 
 https://github.com/user-attachments/assets/3e75deb8-836c-43ce-a92e-47b8b1d08e60
 
 ---
 
-## 🏗️ Arquitectura de Sistema y Stack Tecnológico
+## 🏗️ System Architecture & Technology Stack
 
-Este repositorio contiene la arquitectura de la aplicación cliente (Web/Edge), optimizada para alta disponibilidad, renderizado reactivo y manejo de estados complejos en el navegador. *(Nota: Por políticas de cumplimiento normativo y privacidad de datos estudiantiles, los repositorios de los microservicios backend, bases de datos relacionales y APIs de autenticación permanecen privados).*
+This repository contains the client application architecture (Web/Edge), optimized for high availability, reactive rendering, and complex in-browser state handling. *(Note: Due to regulatory compliance policies and student data privacy, backend microservice repositories, relational databases, and authentication APIs remain private).*
 
 - **Core & Runtime (Edge-Optimized):**
-  - `react` (`^19.0.1`) & `react-dom` para interfaces reactivas de alto rendimiento.
-  - `typescript` (`~5.8.2`) implementando tipado estricto y Patrón de Dominio Desacoplado (DDD-like).
-  - `vite` (`^6.2.3`) para compilación y empaquetado de última generación.
-- **Interfaz de Usuario (UI) & Motion:**
-  - `tailwindcss` (`^4.1.14`) con motor de estilos basado en utilidades de nueva generación.
-  - `motion` (`^12.23.24`) para transiciones espaciales y feedback fluido.
-  - `clsx` & `tailwind-merge` para renderizado condicional seguro.
-- **Motor Analítico e IA:**
-  - Integración nativa con `@google/genai` (`^2.4.0`) para inferencia y soporte contextual.
-- **Gestión de Estado (Capa Cliente):**
-  - Persistencia reactiva en caché local (`localStorageAdapter.ts`) como estrategia *offline-first* y manejo de sesión por roles (`Context API`).
+  - `react` (`^19.0.1`) & `react-dom` for high-performance reactive interfaces.
+  - `typescript` (`~5.8.2`) implementing strict typing and Decoupled Domain Pattern (DDD-like).
+  - `vite` (`^6.2.3`) for next-generation compilation and bundling.
+- **User Interface (UI) & Motion:**
+  - `tailwindcss` (`^4.1.14`) featuring a next-gen utility-first styling engine.
+  - `motion` (`^12.23.24`) for spatial transitions and fluid feedback.
+  - `clsx` & `tailwind-merge` for safe conditional rendering.
+- **Analytics & AI Engine:**
+  - Native integration with `@google/genai` (`^2.4.0`) for inference and contextual support.
+- **State Management (Client Layer):**
+  - Reactive local cache persistence (`localStorageAdapter.ts`) as an *offline-first* strategy and role-based session management (`Context API`).
 
 ---
 
-## 🚀 Módulos Operativos (Desplegados)
+## 🚀 Operational Modules (Deployed)
 
-### 👨‍🏫 1. Portal Docente (Teacher Workspace)
-* **Libro de Calificaciones Matricial (Excel-Gradebook):** Motor de cálculo en tiempo real que procesa ediciones celda por celda, computando promedios ponderados y conversiones automáticas a escalas vigesimales y cualitativas (`A+` a `F`).
-* **Gestor de Evaluaciones Dinámico:** Orquestación de pesos porcentuales (validación estricta al 100%) para parciales, laboratorios y evaluación continua.
-* **Sistema de Asistencia de Alta Densidad:** Registro transaccional por sesión (Presente, Tardanza, Faltas) con marcaje masivo.
-* **Lanzador de Aulas Híbridas (Virtual Classroom Launcher):** Integración en un clic con infraestructura externa (Zoom Enterprise, Google Meet Pro, Jupyter Cloud Labs).
+### 👨‍🏫 1. Teacher Workspace (Teacher Portal)
+* **Matrix Gradebook (Excel-Gradebook):** Real-time calculation engine processing cell-by-cell edits, computing weighted averages, and automatic conversions to vigesimal and qualitative scales (`A+` to `F`).
+* **Dynamic Evaluation Manager:** Percentage weight orchestration (strict 100% validation) for midterms, laboratories, and continuous assessments.
+* **High-Density Attendance System:** Session-by-session transactional tracking (Present, Late, Absent) with batch marking.
+* **Virtual Classroom Launcher:** One-click integration with external infrastructure (Zoom Enterprise, Google Meet Pro, Jupyter Cloud Labs).
 
-### 🎓 2. Portal Estudiante (Student Analytics)
-* **Dashboard de Rendimiento (GPA Tracking):** Visualización de créditos aprobados, estado de matrícula y desglose pormenorizado de evaluaciones.
-* **Simulador Predictivo de Calificaciones:** Algoritmo matemático (`gradeCalculationService.ts`) que proyecta la nota mínima exacta requerida en evaluaciones futuras para alcanzar métricas de aprobación objetivo.
-* **Monitor de Riesgo Académico (Alerta FA):** Sistema de advertencia temprana (`attendanceCalculationService.ts`) que detecta y alerta sobre riesgo de inhabilitación por umbrales de inasistencia (>30%).
+### 🎓 2. Student Analytics (Student Portal)
+* **Performance Dashboard (GPA Tracking):** Visualization of approved credits, enrollment status, and itemized evaluation breakdowns.
+* **Predictive Grade Simulator:** Mathematical algorithm (`gradeCalculationService.ts`) projecting the exact minimum grade required on future evaluations to achieve target passing thresholds.
+* **Academic Risk Monitor (FA Alert):** Early warning system (`attendanceCalculationService.ts`) detecting and alerting on disqualification risks due to absence thresholds (>30%).
 
-### 🏛️ 3. Centro de Mando Administrativo (Admin Console)
-* **Gobernanza de Infraestructura:** Asignación centralizada de recursos virtuales y físicos (Salas Zoom, Laboratorios Cloud GPU NVIDIA A100).
-* **Prevención de Colisiones Horarias:** Motor de validación temporal (`resourceAllocationService.ts`) que bloquea el solapamiento de asignaciones en la misma franja y día.
-* **Gestión de Programas:** Administración del catálogo de cursos, supervisión de facultades y auditoría de censo estudiantil.
+### 🏛️ 3. Administrative Command Center (Admin Console)
+* **Infrastructure Governance:** Centralized allocation of virtual and physical resources (Zoom Rooms, Cloud NVIDIA A100 GPU Labs).
+* **Schedule Collision Prevention:** Temporal validation engine (`resourceAllocationService.ts`) blocking overlapping assignments within the same time slot and day.
+* **Program Management:** Course catalog administration, faculty oversight, and student census auditing.
 
 ---
 
-## 💻 Guía de Despliegue y Auditoría (Entorno Local)
+## 💻 Deployment & Audit Guide (Local Environment)
 
-Para ingenieros de QA, DevOps o desarrolladores autorizados que requieran auditar el renderizado del cliente en entorno local:
+For QA engineers, DevOps, or authorized developers requiring local client rendering audits:
 
-### 1. Preparación del Entorno (Node.js v18+)
+### 1. Environment Preparation (Node.js v18+)
 ```bash
-git clone [https://github.com/tu-usuario/UNIPERIUM.git](https://github.com/tu-usuario/UNIPERIUM.git)
+git clone https://github.com/tu-usuario/UNIPERIUM.git
 cd UNIPERIUM
 npm install
 ```
-### 2. Configuración de VariablesPara habilitar los módulos de IA predictiva, inyecte las credenciales correspondientes.
-```Bash
+### 2. Environment Variables Configuration
+To enable predictive AI modules, inject the corresponding credentials:
+```bash
 cp .env.example .env
 ```
-### 3. Servidor de Desarrollo Local
-```Bash
+### 3. Local Development Server
+```bash
 npm run dev
 ```
-El entorno de auditoría estará disponible en http://localhost:3000. 
-El sistema iniciará en modo "Sandboxed" (con datos simulados precargados en caché para evaluación de UI/UX sin conexión a base de datos de producción).
+The audit environment will be available at http://localhost:3000. 
+The system will start in "Sandboxed" mode (with simulated mock data preloaded in local cache for UI/UX evaluation without production database connections).
 
-### ⚙️ 4. Herramientas de Integración y Despliegue (CI/CD)
+### ⚙️ 4. CI/CD & Integration Tooling
 
-| Comando | Descripción de la Operación Pipeline |
+| Command | Pipeline Operation Description |
 | :--- | :--- |
-| `npm run build` | Compila y optimiza el árbol de dependencias TypeScript para despliegue en CDN/Edge. |
-| `npm run preview` | Previsualiza el artefacto de producción generado localmente. |
-| `npm run lint` | Ejecuta verificación estricta de tipos (`tsc --noEmit`) para control de calidad pre-commit. |
-| `npm run clean` | Purga directorios de compilación previos. |
+| `npm run build` | Compiles and optimizes the TypeScript dependency tree for CDN/Edge deployment. |
+| `npm run preview` | Previews the locally generated production build artifact. |
+| `npm run lint` | Runs strict type checking (`tsc --noEmit`) for pre-commit quality control. |
+| `npm run clean` | Cleans up previous build directories. |
 
 ---
-*Propiedad de Arquitectura de Software - Jastin Bolaños © 2026. Proyecto de Demostración Técnica.*
+*Software Architecture Property - Jastin Bolaños © 2026. Technical Demonstration Project.*
